@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f715d988943eb759e7c2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5da08a97fd473335f1b8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -2932,6 +2932,7 @@ var navmenu_component_1 = __webpack_require__(31);
 var home_component_1 = __webpack_require__(30);
 var fetchdata_component_1 = __webpack_require__(29);
 var counter_component_1 = __webpack_require__(28);
+var core_2 = __webpack_require__(1);
 var baseurl_constants_1 = __webpack_require__(10);
 var user_service_1 = __webpack_require__(34);
 function createTranslateLoader(http, baseHref) {
@@ -2956,25 +2957,24 @@ exports.sharedConfig = {
     imports: [
         http_1.HttpModule,
         // i18n support
-        core_1.TranslateModule.forRoot({
-            loader: {
-                provide: core_1.TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [http_1.Http, [baseurl_constants_1.ORIGIN_URL]]
-            }
-        }),
-        //THIRDPARTYLIBPROVIDERS, //<-- registered provider here
         //TranslateModule.forRoot({
         //    loader: {
         //        provide: TranslateLoader,
         //        useFactory: (createTranslateLoader),
-        //        deps: [
-        //            Http,
-        //            new Inject(ORIGIN_URL), //remove this while using `InjectionToken`
-        //            //ORGIN_URL //<-- this will be with `InjectionToken`
-        //        ] //passed dependency name in `deps`
+        //        deps: [Http, [ORIGIN_URL]]
         //    }
         //}),
+        user_service_1.THIRDPARTYLIBPROVIDERS,
+        core_1.TranslateModule.forRoot({
+            loader: {
+                provide: core_1.TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [
+                    http_1.Http,
+                    new core_2.Inject(baseurl_constants_1.ORIGIN_URL),
+                ] //passed dependency name in `deps`
+            }
+        }),
         router_1.RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: home_component_1.HomeComponent },
@@ -3424,9 +3424,7 @@ var baseurl_constants_1 = __webpack_require__(10);
 var transfer_http_1 = __webpack_require__(32);
 var core_2 = __webpack_require__(1);
 exports.ORIGIN_URL = new core_2.OpaqueToken('ORIGIN_URL');
-exports.THIRDPARTYLIBPROVIDERS = [
-    { provide: exports.ORIGIN_URL, useClass: baseurl_constants_1.ORIGIN_URL }
-];
+exports.THIRDPARTYLIBPROVIDERS = [{ provide: exports.ORIGIN_URL, useValue: baseurl_constants_1.ORIGIN_URL }];
 var UserService = (function () {
     function UserService(transferHttp, // Use only for GETS that you want re-used between Server render -> Client render
         http, // Use for everything else

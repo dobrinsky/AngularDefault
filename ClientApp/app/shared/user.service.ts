@@ -9,9 +9,7 @@ import { OpaqueToken } from '@angular/core'
 
 export let ORIGIN_URL = new OpaqueToken('ORIGIN_URL');
 
-export const THIRDPARTYLIBPROVIDERS = [
-    { provide: ORIGIN_URL, useClass: url }
-];
+export const THIRDPARTYLIBPROVIDERS = [{ provide: ORIGIN_URL, useValue: url }];
 
 @Injectable()
 export class UserService {

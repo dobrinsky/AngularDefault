@@ -40,25 +40,25 @@ export const sharedConfig: NgModule = {
     imports: [
         HttpModule,
         // i18n support
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [Http, [ORIGIN_URL]]
-            }
-        }),
-        //THIRDPARTYLIBPROVIDERS, //<-- registered provider here
         //TranslateModule.forRoot({
         //    loader: {
         //        provide: TranslateLoader,
         //        useFactory: (createTranslateLoader),
-        //        deps: [
-        //            Http,
-        //            new Inject(ORIGIN_URL), //remove this while using `InjectionToken`
-        //            //ORGIN_URL //<-- this will be with `InjectionToken`
-        //        ] //passed dependency name in `deps`
+        //        deps: [Http, [ORIGIN_URL]]
         //    }
         //}),
+        THIRDPARTYLIBPROVIDERS, //<-- registered provider here
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [
+                    Http,
+                    new Inject(ORIGIN_URL), //remove this while using `InjectionToken`
+                    //ORGIN_URL //<-- this will be with `InjectionToken`
+                ] //passed dependency name in `deps`
+            }
+        }),
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
