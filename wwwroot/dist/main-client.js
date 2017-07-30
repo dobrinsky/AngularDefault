@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0433658ec3b9f9292dc6"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f715d988943eb759e7c2"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -742,7 +742,7 @@ module.exports = (__webpack_require__(0))(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_concat___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_concat__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge__);
@@ -753,9 +753,9 @@ module.exports = (__webpack_require__(0))(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_take__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_take__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__translate_store__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__translate_loader__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__missing_translation_handler__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__translate_parser__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__translate_loader__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__missing_translation_handler__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__translate_parser__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__util__ = __webpack_require__(5);
 
 
@@ -1406,196 +1406,13 @@ function mergeDeep(target, source) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MissingTranslationHandler; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return FakeMissingTranslationHandler; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-
-var MissingTranslationHandler = (function () {
-    function MissingTranslationHandler() {
-    }
-    return MissingTranslationHandler;
-}());
-
-/**
- * This handler is just a placeholder that does nothing, in case you don't need a missing translation handler at all
- */
-var FakeMissingTranslationHandler = (function () {
-    function FakeMissingTranslationHandler() {
-    }
-    FakeMissingTranslationHandler.prototype.handle = function (params) {
-        return params.key;
-    };
-    return FakeMissingTranslationHandler;
-}());
-
-FakeMissingTranslationHandler.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-FakeMissingTranslationHandler.ctorParameters = function () { return []; };
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslateLoader; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TranslateFakeLoader; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var TranslateLoader = (function () {
-    function TranslateLoader() {
-    }
-    return TranslateLoader;
-}());
-
-/**
- * This loader is just a placeholder that does nothing, in case you don't need a loader at all
- */
-var TranslateFakeLoader = (function (_super) {
-    __extends(TranslateFakeLoader, _super);
-    function TranslateFakeLoader() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    TranslateFakeLoader.prototype.getTranslation = function (lang) {
-        return __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].of({});
-    };
-    return TranslateFakeLoader;
-}(TranslateLoader));
-
-TranslateFakeLoader.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-TranslateFakeLoader.ctorParameters = function () { return []; };
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslateParser; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TranslateDefaultParser; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(5);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var TranslateParser = (function () {
-    function TranslateParser() {
-    }
-    return TranslateParser;
-}());
-
-var TranslateDefaultParser = (function (_super) {
-    __extends(TranslateDefaultParser, _super);
-    function TranslateDefaultParser() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
-        return _this;
-    }
-    TranslateDefaultParser.prototype.interpolate = function (expr, params) {
-        var _this = this;
-        if (typeof expr !== 'string' || !params) {
-            return expr;
-        }
-        return expr.replace(this.templateMatcher, function (substring, b) {
-            var r = _this.getValue(params, b);
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(r) ? r : substring;
-        });
-    };
-    TranslateDefaultParser.prototype.getValue = function (target, key) {
-        var keys = key.split('.');
-        key = '';
-        do {
-            key += keys.shift();
-            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(target) && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(target[key]) && (typeof target[key] === 'object' || !keys.length)) {
-                target = target[key];
-                key = '';
-            }
-            else if (!keys.length) {
-                target = undefined;
-            }
-            else {
-                key += '.';
-            }
-        } while (keys.length);
-        return target;
-    };
-    return TranslateDefaultParser;
-}(TranslateParser));
-
-TranslateDefaultParser.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-TranslateDefaultParser.ctorParameters = function () { return []; };
-
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(1);
-exports.ORIGIN_URL = new core_1.InjectionToken('ORIGIN_URL');
-
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var map_1 = __webpack_require__(76);
-Observable_1.Observable.prototype.map = map_1.map;
-//# sourceMappingURL=map.js.map
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(0))(3);
-
-/***/ }),
-/* 12 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TranslateModule", function() { return TranslateModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_translate_loader__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_translate_loader__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_translate_service__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_missing_translation_handler__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_translate_parser__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_missing_translation_handler__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_translate_parser__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_translate_directive__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_translate_pipe__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_translate_store__ = __webpack_require__(15);
@@ -1686,6 +1503,189 @@ TranslateModule.decorators = [
 /** @nocollapse */
 TranslateModule.ctorParameters = function () { return []; };
 
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MissingTranslationHandler; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return FakeMissingTranslationHandler; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+
+var MissingTranslationHandler = (function () {
+    function MissingTranslationHandler() {
+    }
+    return MissingTranslationHandler;
+}());
+
+/**
+ * This handler is just a placeholder that does nothing, in case you don't need a missing translation handler at all
+ */
+var FakeMissingTranslationHandler = (function () {
+    function FakeMissingTranslationHandler() {
+    }
+    FakeMissingTranslationHandler.prototype.handle = function (params) {
+        return params.key;
+    };
+    return FakeMissingTranslationHandler;
+}());
+
+FakeMissingTranslationHandler.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+FakeMissingTranslationHandler.ctorParameters = function () { return []; };
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslateLoader; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TranslateFakeLoader; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var TranslateLoader = (function () {
+    function TranslateLoader() {
+    }
+    return TranslateLoader;
+}());
+
+/**
+ * This loader is just a placeholder that does nothing, in case you don't need a loader at all
+ */
+var TranslateFakeLoader = (function (_super) {
+    __extends(TranslateFakeLoader, _super);
+    function TranslateFakeLoader() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TranslateFakeLoader.prototype.getTranslation = function (lang) {
+        return __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].of({});
+    };
+    return TranslateFakeLoader;
+}(TranslateLoader));
+
+TranslateFakeLoader.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+TranslateFakeLoader.ctorParameters = function () { return []; };
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslateParser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TranslateDefaultParser; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(5);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var TranslateParser = (function () {
+    function TranslateParser() {
+    }
+    return TranslateParser;
+}());
+
+var TranslateDefaultParser = (function (_super) {
+    __extends(TranslateDefaultParser, _super);
+    function TranslateDefaultParser() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
+        return _this;
+    }
+    TranslateDefaultParser.prototype.interpolate = function (expr, params) {
+        var _this = this;
+        if (typeof expr !== 'string' || !params) {
+            return expr;
+        }
+        return expr.replace(this.templateMatcher, function (substring, b) {
+            var r = _this.getValue(params, b);
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(r) ? r : substring;
+        });
+    };
+    TranslateDefaultParser.prototype.getValue = function (target, key) {
+        var keys = key.split('.');
+        key = '';
+        do {
+            key += keys.shift();
+            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(target) && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(target[key]) && (typeof target[key] === 'object' || !keys.length)) {
+                target = target[key];
+                key = '';
+            }
+            else if (!keys.length) {
+                target = undefined;
+            }
+            else {
+                key += '.';
+            }
+        } while (keys.length);
+        return target;
+    };
+    return TranslateDefaultParser;
+}(TranslateParser));
+
+TranslateDefaultParser.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+TranslateDefaultParser.ctorParameters = function () { return []; };
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(1);
+exports.ORIGIN_URL = new core_1.InjectionToken('ORIGIN_URL');
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var map_1 = __webpack_require__(76);
+Observable_1.Observable.prototype.map = map_1.map;
+//# sourceMappingURL=map.js.map
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(0))(3);
 
 /***/ }),
 /* 13 */
@@ -2653,7 +2653,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslateHttpLoader; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__);
 
 var TranslateHttpLoader = (function () {
@@ -2889,7 +2889,7 @@ var platform_browser_1 = __webpack_require__(81);
 var forms_1 = __webpack_require__(78);
 var http_1 = __webpack_require__(4);
 var app_module_1 = __webpack_require__(26);
-var baseurl_constants_1 = __webpack_require__(9);
+var baseurl_constants_1 = __webpack_require__(10);
 function getOriginUrl() {
     return window.location.origin;
 }
@@ -2925,20 +2925,21 @@ exports.AppModule = AppModule;
 Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = __webpack_require__(80);
 var http_1 = __webpack_require__(4);
-var core_1 = __webpack_require__(12);
+var core_1 = __webpack_require__(6);
 var http_loader_1 = __webpack_require__(21);
 var app_component_1 = __webpack_require__(27);
 var navmenu_component_1 = __webpack_require__(31);
 var home_component_1 = __webpack_require__(30);
 var fetchdata_component_1 = __webpack_require__(29);
 var counter_component_1 = __webpack_require__(28);
-var baseurl_constants_1 = __webpack_require__(9);
+var baseurl_constants_1 = __webpack_require__(10);
 var user_service_1 = __webpack_require__(34);
 function createTranslateLoader(http, baseHref) {
     // Temporary Azure hack
     if (baseHref === null && typeof window !== 'undefined') {
         baseHref = window.location.origin;
     }
+    console.log("Hugabugagau: " + user_service_1.THIRDPARTYLIBPROVIDERS);
     // i18n files are in `wwwroot/assets/`
     return new http_loader_1.TranslateHttpLoader(http, baseHref + "/assets/i18n/", '.json');
 }
@@ -2954,14 +2955,26 @@ exports.sharedConfig = {
     ],
     imports: [
         http_1.HttpModule,
-        baseurl_constants_1.ORIGIN_URL,
+        // i18n support
         core_1.TranslateModule.forRoot({
             loader: {
                 provide: core_1.TranslateLoader,
                 useFactory: (createTranslateLoader),
-                deps: [http_1.Http, baseurl_constants_1.ORIGIN_URL] //passed dependency name in `deps`
+                deps: [http_1.Http, [baseurl_constants_1.ORIGIN_URL]]
             }
         }),
+        //THIRDPARTYLIBPROVIDERS, //<-- registered provider here
+        //TranslateModule.forRoot({
+        //    loader: {
+        //        provide: TranslateLoader,
+        //        useFactory: (createTranslateLoader),
+        //        deps: [
+        //            Http,
+        //            new Inject(ORIGIN_URL), //remove this while using `InjectionToken`
+        //            //ORGIN_URL //<-- this will be with `InjectionToken`
+        //        ] //passed dependency name in `deps`
+        //    }
+        //}),
         router_1.RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: home_component_1.HomeComponent },
@@ -2992,18 +3005,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
-var core_2 = __webpack_require__(12);
-var http_1 = __webpack_require__(4);
+var core_2 = __webpack_require__(6);
 var AppComponent = (function () {
-    function AppComponent(translate, http, baseUrl) {
+    function AppComponent(translate) {
         this.translate = translate;
-        this.http = http;
-        this.baseUrl = baseUrl;
         this.user = {
             name: 'Arthur',
             age: 42
@@ -3021,8 +3028,7 @@ AppComponent = __decorate([
         template: __webpack_require__(40),
         styles: [__webpack_require__(65)]
     }),
-    __param(2, core_1.Inject('ORIGIN_URL')),
-    __metadata("design:paramtypes", [core_2.TranslateService, http_1.Http, String])
+    __metadata("design:paramtypes", [core_2.TranslateService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 
@@ -3083,7 +3089,6 @@ var http_1 = __webpack_require__(4);
 var FetchDataComponent = (function () {
     function FetchDataComponent(http, originUrl) {
         var _this = this;
-        this.originUrl = originUrl;
         http.get(originUrl + '/api/SampleData/WeatherForecasts').subscribe(function (result) {
             _this.forecasts = result.json();
         });
@@ -3113,18 +3118,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
+var core_2 = __webpack_require__(6);
 var HomeComponent = (function () {
-    function HomeComponent() {
+    // Use "constructor"s only for dependency injection
+    function HomeComponent(translate) {
+        this.translate = translate;
+        this.title = 'Angular 4.0 Universal & ASP.NET Core advanced starter-kit';
     }
+    HomeComponent.prototype.setLanguage = function (lang) {
+        this.translate.use(lang);
+    };
     return HomeComponent;
 }());
 HomeComponent = __decorate([
     core_1.Component({
         selector: 'home',
         template: __webpack_require__(43)
-    })
+    }),
+    __metadata("design:paramtypes", [core_2.TranslateService])
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
 
@@ -3182,7 +3198,7 @@ var http_1 = __webpack_require__(4);
 var Observable_1 = __webpack_require__(2);
 var transfer_state_1 = __webpack_require__(33);
 var common_1 = __webpack_require__(83);
-__webpack_require__(10);
+__webpack_require__(11);
 __webpack_require__(52);
 __webpack_require__(49);
 var TransferHttp = (function () {
@@ -3404,7 +3420,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var http_1 = __webpack_require__(4);
-var baseurl_constants_1 = __webpack_require__(9);
+var baseurl_constants_1 = __webpack_require__(10);
 var transfer_http_1 = __webpack_require__(32);
 var core_2 = __webpack_require__(1);
 exports.ORIGIN_URL = new core_2.OpaqueToken('ORIGIN_URL');
@@ -3825,7 +3841,7 @@ module.exports = "<h1>Weather forecast</h1>\r\n\r\n<p>This component demonstrate
 /* 43 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Hello, world!</h1>\r\n<p>Welcome to your new single-page application, built with:</p>\r\n<ul>\r\n    <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>\r\n    <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>\r\n    <li><a href='https://webpack.github.io/'>Webpack</a> for building and bundling client-side resources</li>\r\n    <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>\r\n</ul>\r\n<p>To help you get started, we've also set up:</p>\r\n<ul>\r\n    <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>\r\n    <li><strong>Server-side prerendering</strong>. For faster initial loading and improved SEO, your Angular app is prerendered on the server. The resulting HTML is then transferred to the browser where a client-side copy of the app takes over.</li>\r\n    <li><strong>Webpack dev middleware</strong>. In development mode, there's no need to run the <code>webpack</code> build tool. Your client-side resources are dynamically built on demand. Updates are available as soon as you modify any file.</li>\r\n    <li><strong>Hot module replacement</strong>. In development mode, you don't even need to reload the page after making most changes. Within seconds of saving changes to files, your Angular app will be rebuilt and a new instance injected is into the page.</li>\r\n    <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and the <code>webpack</code> build tool produces minified static CSS and JavaScript files.</li>\r\n</ul>\r\n\r\n<h1 translate>Title</h1>\r\n\r\n<div>\r\n    {{ 'Intro' | translate:user }}\r\n</div>\r\n\r\n<button (click)=\"switchLanguage('en')\">en</button>\r\n\r\n<button (click)=\"switchLanguage('ro')\">ro</button>";
+module.exports = "<h1>Hello, world!</h1>\r\n<p>Welcome to your new single-page application, built with:</p>\r\n<ul>\r\n    <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>\r\n    <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>\r\n    <li><a href='https://webpack.github.io/'>Webpack</a> for building and bundling client-side resources</li>\r\n    <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>\r\n</ul>\r\n<p>To help you get started, we've also set up:</p>\r\n<ul>\r\n    <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>\r\n    <li><strong>Server-side prerendering</strong>. For faster initial loading and improved SEO, your Angular app is prerendered on the server. The resulting HTML is then transferred to the browser where a client-side copy of the app takes over.</li>\r\n    <li><strong>Webpack dev middleware</strong>. In development mode, there's no need to run the <code>webpack</code> build tool. Your client-side resources are dynamically built on demand. Updates are available as soon as you modify any file.</li>\r\n    <li><strong>Hot module replacement</strong>. In development mode, you don't even need to reload the page after making most changes. Within seconds of saving changes to files, your Angular app will be rebuilt and a new instance injected is into the page.</li>\r\n    <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and the <code>webpack</code> build tool produces minified static CSS and JavaScript files.</li>\r\n</ul>\r\n\r\n<h1 translate>Title</h1>\r\n\r\n<div>\r\n    {{ 'Intro' | translate:user }}\r\n</div>\r\n\r\n<h2> {{ 'TITLE' | translate }}</h2>\r\n\r\n<button (click)=\"switchLanguage('en')\">en</button>\r\n\r\n<button (click)=\"switchLanguage('ro')\">ro</button>\r\n\r\n<button class=\"btn btn-default\" (click)=\"setLanguage('en')\">\r\n    <span class=\"flag-icon flag-icon-us\"></span>  English\r\n</button>\r\n<button class=\"btn btn-default\" (click)=\"setLanguage('ro')\">\r\n    <span class=\"flag-icon flag-icon-ro\"></span> Romanian\r\n</button>";
 
 /***/ }),
 /* 44 */
@@ -5449,7 +5465,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscriber_1 = __webpack_require__(11);
+var Subscriber_1 = __webpack_require__(12);
 /* tslint:enable:max-line-length */
 /**
  * Perform a side effect for every emission on the source Observable, but return
@@ -5714,7 +5730,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscriber_1 = __webpack_require__(11);
+var Subscriber_1 = __webpack_require__(12);
 var ArgumentOutOfRangeError_1 = __webpack_require__(63);
 var EmptyObservable_1 = __webpack_require__(73);
 /**
@@ -5809,7 +5825,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscriber_1 = __webpack_require__(11);
+var Subscriber_1 = __webpack_require__(12);
 /**
  * @return {Observable<any[]>|WebSocketSubject<T>|Observable<T>}
  * @method toArray

@@ -11,18 +11,19 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 
-import { InjectionToken } from '@angular/core';
+import { InjectionToken, Inject } from '@angular/core';
 
 import { ORIGIN_URL } from './constants/baseurl.constants';
 import { getOriginUrl } from "./app.module.client";
 
-import { UserService } from './shared/user.service';
+import { UserService, THIRDPARTYLIBPROVIDERS } from './shared/user.service';
 
 export function createTranslateLoader(http: Http, baseHref) {
     // Temporary Azure hack
     if (baseHref === null && typeof window !== 'undefined') {
         baseHref = window.location.origin;
     }
+    console.log("Hugabugagau: " + THIRDPARTYLIBPROVIDERS)
     // i18n files are in `wwwroot/assets/`
     return new TranslateHttpLoader(http, `${baseHref}/assets/i18n/`, '.json');
 }
@@ -38,14 +39,26 @@ export const sharedConfig: NgModule = {
     ],
     imports: [
         HttpModule,
-        ORIGIN_URL,
+        // i18n support
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
-                deps: [Http, ORIGIN_URL] //passed dependency name in `deps`
+                deps: [Http, [ORIGIN_URL]]
             }
         }),
+        //THIRDPARTYLIBPROVIDERS, //<-- registered provider here
+        //TranslateModule.forRoot({
+        //    loader: {
+        //        provide: TranslateLoader,
+        //        useFactory: (createTranslateLoader),
+        //        deps: [
+        //            Http,
+        //            new Inject(ORIGIN_URL), //remove this while using `InjectionToken`
+        //            //ORGIN_URL //<-- this will be with `InjectionToken`
+        //        ] //passed dependency name in `deps`
+        //    }
+        //}),
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },

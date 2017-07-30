@@ -21,6 +21,15 @@
     {{ 'Intro' | translate:user }}
 </div>
 
+<h2> {{ 'TITLE' | translate }}</h2>
+
 <button (click)="switchLanguage('en')">en</button>
 
 <button (click)="switchLanguage('ro')">ro</button>
+
+<button class="btn btn-default" (click)="setLanguage('en')">
+    <span class="flag-icon flag-icon-us"></span>  English
+</button>
+<button class="btn btn-default" (click)="setLanguage('ro')">
+    <span class="flag-icon flag-icon-ro"></span> Romanian
+</button>

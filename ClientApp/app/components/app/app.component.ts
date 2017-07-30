@@ -14,8 +14,7 @@ export class AppComponent {
         age: 42
     };
 
-    constructor(private translate: TranslateService, private http: Http,
-        @Inject('ORIGIN_URL') private baseUrl: string) {
+    constructor(private translate: TranslateService) {
         translate.setDefaultLang('ro');
     }
 
