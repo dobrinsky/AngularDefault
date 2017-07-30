@@ -8,6 +8,6 @@ export class CounterComponent {
     public currentCount = 0;
 
     public incrementCounter() {
-        this.currentCount+=9;
+        this.currentCount+=11;
     }
 }
