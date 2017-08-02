@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 import { sharedConfig } from './app.module';
+import { TransferState } from "./modules/transfer-state/transfer-state";
 
 @NgModule({
     bootstrap: sharedConfig.bootstrap,
@@ -11,4 +12,10 @@ import { sharedConfig } from './app.module';
     ]
 })
 export class AppModule {
+  //  constructor(private transferState: TransferState) { }
+
+  //// Gotcha (needs to be an arrow function)
+  //ngOnBootstrap = () => {
+  //  this.transferState.inject();
+  //}
 }

@@ -26,7 +26,7 @@ export class UserService {
         //      The Client then re-uses this Http result instead of hitting the server again!
 
         //  NOTE : transferHttp also automatically does .map(res => res.json()) for you, so no need for these calls
-        return this.transferHttp.get(`${this.baseUrl}/api/users`);
+        return this.transferHttp.get(this.baseUrl +'/api/users');
     }
 
     getUser(user: IUser): Observable<IUser> {
