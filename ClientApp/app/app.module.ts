@@ -29,6 +29,13 @@ import { LinkService } from './shared/link.service';
 import { UserService, THIRDPARTYLIBPROVIDERS } from './shared/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { ServerModule } from '@angular/platform-server';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ServerTransferStateModule } from './modules/transfer-state/server-transfer-state.module';
+import { TransferState } from './modules/transfer-state/transfer-state';
+import { UserComponent } from "./components/user/user.component";
+import { ErrorComponent } from "./components/error/error.component";
+
 export function createTranslateLoader(http: Http, baseHref) {
     // Temporary Azure hack
     if (baseHref === null && typeof window !== 'undefined') {
@@ -49,10 +56,19 @@ export const sharedConfig: NgModule = {
         UsersComponent,
         UserDetailComponent,
         HomeComponent,
-        NgxBootstrapComponent
+        NgxBootstrapComponent,
+        UserComponent,
+        ErrorComponent,
     ],
     imports: [
         BrowserModule,
+        BrowserModule.withServerTransition({
+            appId: 'my-app-id' // make sure this matches with your Browser NgModule
+        }),
+        //ServerModule,
+        NoopAnimationsModule,
+        ServerTransferStateModule,
+
         CommonModule,
         HttpModule,
         FormsModule,
@@ -92,6 +108,11 @@ export const sharedConfig: NgModule = {
                     ]
                 }
             },
+
+
+            { path: 'user', component: UserComponent },
+            { path: 'error', component: ErrorComponent },
+
             { path: 'fetch-data', component: FetchDataComponent },
             { path: '**', redirectTo: 'home' }
         ])
@@ -106,4 +127,14 @@ export const sharedConfig: NgModule = {
 };
 
 export class AppModule {
+}
+
+export class ServerAppModule {
+
+    constructor(private transferState: TransferState) { }
+
+    // Gotcha (needs to be an arrow function)
+    ngOnBootstrap = () => {
+        this.transferState.inject();
+    }
 }

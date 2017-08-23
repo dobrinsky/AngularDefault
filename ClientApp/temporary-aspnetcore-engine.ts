@@ -84,8 +84,9 @@ export function ngAspnetCoreEngine(
             provide: ORIGIN_URL,
             useValue: options.request.origin
           }, {
-            provide: REQUEST,
-            useValue: options.request.data.request
+              provide: REQUEST,
+              useValue: options.request
+            //useValue: options.request.data.request
           }
         ]
       );
