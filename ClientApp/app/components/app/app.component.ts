@@ -15,6 +15,7 @@ import { getOriginUrl, getRequest } from "../../app.module.client";
     selector: 'app',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
+    providers: [TranslateService]
 
 })
 export class AppComponent implements OnInit, OnDestroy {

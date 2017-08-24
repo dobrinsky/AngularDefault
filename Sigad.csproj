@@ -3,7 +3,15 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <IsPackable>false</IsPackable>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
   </PropertyGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  
+  
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="2.0.1" />
@@ -25,6 +33,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +46,16 @@
     <Content Remove="Client\**" />
     <EmbeddedResource Remove="Client\**" />
     <None Remove="Client\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClientApp\app\services\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Shared\" />
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
   <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
