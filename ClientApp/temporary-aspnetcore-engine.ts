@@ -61,7 +61,7 @@ export function ngAspnetCoreEngine(
       ]
     }
   ]);
-
+  debugger;
   return new Promise((resolve, reject) => {
 
     try {
@@ -69,7 +69,7 @@ export function ngAspnetCoreEngine(
       if (!moduleOrFactory) {
         throw new Error('You must pass in a NgModule or NgModuleFactory to be bootstrapped');
       }
-
+      debugger;
       const extraProviders = options.providers.concat(
         options.providers,
         [

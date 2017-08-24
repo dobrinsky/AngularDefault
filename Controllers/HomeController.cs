@@ -64,11 +64,11 @@ namespace WebApplicationBasic.Controllers
 
             xml += "<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">";
             xml += "<sitemap>";
-            xml += "<loc>http://localhost:4251/home</loc>";
+            xml += "<loc>http://localhost:24432/home</loc>";
             xml += "<lastmod>" + DateTime.Now.ToString("yyyy-MM-dd") + "</lastmod>";
             xml += "</sitemap>";
             xml += "<sitemap>";
-            xml += "<loc>http://localhost:4251/counter</loc>";
+            xml += "<loc>http://localhost:24432/counter</loc>";
             xml += "<lastmod>" + DateTime.Now.ToString("yyyy-MM-dd") + "</lastmod>";
             xml += "</sitemap>";
             xml += "</sitemapindex>";
