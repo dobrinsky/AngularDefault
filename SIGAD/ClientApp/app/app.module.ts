@@ -12,6 +12,16 @@ import { CounterComponent } from './components/counter/counter.component';
 import { UserComponent } from "./components/user/user.component";
 import { ErrorComponent } from "./components/error/error.component";
 
+import { BrowserModule } from '@angular/platform-browser';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -37,7 +47,16 @@ import { ErrorComponent } from "./components/error/error.component";
             { path: 'error', component: ErrorComponent },
 
             { path: '**', redirectTo: 'home' }
-        ])
+        ]),
+        BrowserModule,
+        HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
     ]
 })
 export class AppModuleShared {
