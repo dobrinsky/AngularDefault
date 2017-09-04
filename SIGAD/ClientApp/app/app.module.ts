@@ -20,7 +20,8 @@ import { ErrorComponent } from "./components/error/error.component";
         FetchDataComponent,
         HomeComponent,
         UserComponent,
-        ErrorComponent
+        ErrorComponent,
+        
     ],
     imports: [
         CommonModule,
