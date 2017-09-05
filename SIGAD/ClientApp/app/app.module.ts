@@ -18,8 +18,13 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http);
+import { ORIGIN_URL } from "./constansts/baseurl.constants";
+
+export function HttpLoaderFactory(http: HttpClient, baseHref: any) {
+    if (baseHref === null && typeof window !== 'undefined') {
+        baseHref = window.location.origin;
+    }
+    return new TranslateHttpLoader(http, `${baseHref}/assets/i18n/`, '.json');
 }
 
 @NgModule({
@@ -54,10 +59,11 @@ export function HttpLoaderFactory(http: HttpClient) {
             loader: {
                 provide: TranslateLoader,
                 useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
+                deps: [HttpClient, [ORIGIN_URL]]
             }
         })
     ]
 })
+
 export class AppModuleShared {
 }
