@@ -472,6 +472,15 @@
       "resolved": "https://registry.npmjs.org/amdefine/-/amdefine-1.0.1.tgz",
       "integrity": "sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU="
     },
+    "angular2-cool-storage": {
+      "version": "3.1.0",
+      "resolved": "https://registry.npmjs.org/angular2-cool-storage/-/angular2-cool-storage-3.1.0.tgz",
+      "integrity": "sha512-+g3UAyzRgil9Ek58GsNGqU2ZX8vs7/GpSnoMvKt9Z+FQ3mPO0+MfYKfHLZHlhymCCOIjXVlS09+lvSxdttA4EA==",
+      "requires": {
+        "@angular/common": "4.3.6",
+        "@angular/core": "4.3.6"
+      }
+    },
     "angular2-template-loader": {
       "version": "0.6.2",
       "resolved": "https://registry.npmjs.org/angular2-template-loader/-/angular2-template-loader-0.6.2.tgz",

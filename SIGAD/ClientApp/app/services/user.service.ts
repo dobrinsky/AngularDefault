@@ -9,6 +9,8 @@ import { BaseService } from "./base.service";
 import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/Rx';
 
+import { CoolLocalStorage } from 'angular2-cool-storage';
+
 //import * as _ from 'lodash';
 
 // Add the RxJS Observable operators we need in this app.
@@ -24,15 +26,18 @@ export class UserService extends BaseService {
   // Observable navItem stream
   authNavStatus$ = this._authNavStatusSource.asObservable();
 
+  localStorage: CoolLocalStorage;
+
   private loggedIn = false;
 
-  constructor(private http: Http, private configService: ConfigService) {
+  constructor(private http: Http, private configService: ConfigService, localStorage: CoolLocalStorage) {
     super();
     this.loggedIn = !!localStorage.getItem('auth_token');
     // ?? not sure if this the best way to broadcast the status but seems to resolve issue on page refresh where auth status is lost in
     // header component resulting in authed user nav links disappearing despite the fact user is still logged in
     this._authNavStatusSource.next(this.loggedIn);
     this.baseUrl = configService.getApiURI();
+    this.localStorage = localStorage;
   }
 
     register(email: string, password: string, firstName: string, lastName: string,location: string): Observable<UserRegistration> {

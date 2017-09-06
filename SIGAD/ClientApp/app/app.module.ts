@@ -24,6 +24,7 @@ import { RegistrationFormComponent } from "./account/registration-form/registrat
 import { UserService } from "./services/user.service";
 import { ConfigService } from "./shared/utils/config.service";
 import { LocalStorage } from "./shared/utils/local-storage";
+import { CoolLocalStorage } from "angular2-cool-storage";
 
 export function HttpLoaderFactory(http: HttpClient, baseHref: any) {
     if (baseHref === null && typeof window !== 'undefined') {
@@ -50,7 +51,7 @@ export function HttpLoaderFactory(http: HttpClient, baseHref: any) {
         HttpModule,
         FormsModule,
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: '', redirectTo: 'login', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
@@ -79,7 +80,8 @@ export function HttpLoaderFactory(http: HttpClient, baseHref: any) {
             provide: LocalStorage,
             useValue: { getItem() { } }
         },
-        ConfigService
+        ConfigService,
+        CoolLocalStorage
     ]
 })
 

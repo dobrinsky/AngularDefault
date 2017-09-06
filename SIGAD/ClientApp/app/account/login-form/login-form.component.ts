@@ -36,7 +36,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  login({ value, valid }: { value: Credentials, valid: boolean }) {
+   login({ value, valid }: { value: Credentials, valid: boolean }) {
+       debugger;
     this.submitted = true;
     this.isRequesting = true;
     this.errors='';
