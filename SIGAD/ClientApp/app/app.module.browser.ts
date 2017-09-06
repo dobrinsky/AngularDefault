@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppModuleShared } from './app.module';
 import { AppComponent } from './components/app/app.component';
 import { ORIGIN_URL } from "./constansts/baseurl.constants";
+import { LocalStorage } from "./shared/utils/local-storage";
+import { UserService } from "./services/user.service";
 
 export function getOriginUrl() {
     return window.location.origin;
@@ -22,8 +24,13 @@ export function getOriginUrl() {
             useFactory: (getOriginUrl)
         },
         {
-            provide:
-            'BASE_URL', useFactory: getBaseUrl
+            provide: 'BASE_URL',
+            useFactory: getBaseUrl
+        },
+        UserService,
+        {
+            provide: LocalStorage,
+            useValue: window.localStorage
         }
     ]
 })

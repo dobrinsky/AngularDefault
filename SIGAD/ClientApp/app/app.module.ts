@@ -19,6 +19,11 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { ORIGIN_URL } from "./constansts/baseurl.constants";
+import { LoginFormComponent } from "./account/login-form/login-form.component";
+import { RegistrationFormComponent } from "./account/registration-form/registration-form.component";
+import { UserService } from "./services/user.service";
+import { ConfigService } from "./shared/utils/config.service";
+import { LocalStorage } from "./shared/utils/local-storage";
 
 export function HttpLoaderFactory(http: HttpClient, baseHref: any) {
     if (baseHref === null && typeof window !== 'undefined') {
@@ -30,6 +35,8 @@ export function HttpLoaderFactory(http: HttpClient, baseHref: any) {
 @NgModule({
     declarations: [
         AppComponent,
+        LoginFormComponent,
+        RegistrationFormComponent,
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
@@ -48,6 +55,9 @@ export function HttpLoaderFactory(http: HttpClient, baseHref: any) {
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
 
+            { path: 'login', component: LoginFormComponent },
+            { path: 'register', component: RegistrationFormComponent },
+
             { path: 'user', component: UserComponent },
             { path: 'error', component: ErrorComponent },
 
@@ -62,6 +72,14 @@ export function HttpLoaderFactory(http: HttpClient, baseHref: any) {
                 deps: [HttpClient, [ORIGIN_URL]]
             }
         })
+    ],
+    providers: [
+        UserService,
+        {
+            provide: LocalStorage,
+            useValue: { getItem() { } }
+        },
+        ConfigService
     ]
 })
 

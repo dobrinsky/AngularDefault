@@ -45,7 +45,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\services\base.service.ts" />
+    <None Remove="ClientApp\app\services\user.service.ts" />
+    <None Remove="ClientApp\app\shared\utils\local-storage.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\constansts\baseurl.constants.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\base.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\user.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\utils\local-storage.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\app\account\" />
+    <Folder Include="ClientApp\app\dashboard\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

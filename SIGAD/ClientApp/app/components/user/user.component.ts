@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from "../../services/user.service";
 import { ActivatedRoute, Router } from "@angular/router";
+import { DatabaseUserService } from "../../services/database.user.service";
 
 @Component({
   selector: 'user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css'],
   providers: [
-      UserService,
+      DatabaseUserService,
   ]
 })
 export class UserComponent implements OnInit {
@@ -15,7 +14,7 @@ export class UserComponent implements OnInit {
     users: any;
 
 
-    constructor(private userService: UserService, private route: ActivatedRoute,
+    constructor(private userService: DatabaseUserService, private route: ActivatedRoute,
         private router: Router) {
 
     }
