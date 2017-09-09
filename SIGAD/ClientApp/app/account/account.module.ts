@@ -14,7 +14,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
   imports: [
     CommonModule,FormsModule,routing,SharedModule
   ],
-  declarations: [RegistrationFormComponent,EmailValidator, LoginFormComponent],
+  declarations: [EmailValidator],
   providers:    [ UserService ]
 })
 export class AccountModule { }
