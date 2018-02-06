@@ -1,0 +1,7 @@
+.sc_googlemap img {
+    max-width: none
+}
+
+.sc_googlemap {
+    overflow: hidden;
+}

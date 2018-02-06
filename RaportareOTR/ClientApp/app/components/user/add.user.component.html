@@ -1,0 +1,146 @@
+﻿
+<div class="panel panel-bd lobidisable">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">User nou</h4>
+            <div class="col-md-6">
+                <form class="form-horizontal p-t-20">
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group has-success">
+                                <h4 class="entity-info"><label for="username" class="label-has-danger"> Username </label></h4>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                    <input type="text" id="username" name="username" class="form-control" placeholder="Username" [(ngModel)]="user.username" #username="ngModel">
+                                </div>
+                            </div>
+                            <div class="alert alert-danger" role="alert" *ngIf="usernameErrors.length > 0">
+                                <ul>
+                                    <li *ngFor="let error of usernameErrors">
+                                        {{ error }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group has-success">
+                                <h4 class="entity-info"><label for="userclass" class="label-has-danger"> Userclass </label></h4>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-address-card"></i></div>
+                                    <select class="form-control" id="userclass" name="userclass" [(ngModel)]="user.userclass" maxlength="100" #tipUnitate="ngModel">
+                                        <option value=""> </option>
+                                        <option *ngFor="let t of userclasses" value="{{t}}"> {{t}} </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="alert alert-danger" role="alert" *ngIf="userclassErrors.length > 0">
+                                <ul>
+                                    <li *ngFor="let error of userclassErrors">
+                                        {{ error }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group has-success">
+                                <h4 class="entity-info"><label for="password" class="label-has-danger"> Password </label></h4>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                                    <input id="password" type="password" class="form-control" [(ngModel)]="user.password" name="password" required #password="ngModel">
+                                </div>
+                            </div>
+                            <div class="alert alert-danger" role="alert" *ngIf="passwordErrors.length > 0">
+                                <ul>
+                                    <li *ngFor="let error of passwordErrors">
+                                        {{ error }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group has-success">
+                                <h4 class="entity-info"><label for="confirmpassword" class="label-has-danger"> Confirm password </label></h4>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                                    <input id="confirmpassword" type="password" class="form-control" [(ngModel)]="user.confirmPassword" name="confirmpassword">
+                                </div>
+                            </div>
+                            <div class="alert alert-danger" role="alert" *ngIf="passwordConfirmationErrors.length > 0">
+                                <ul>
+                                    <li *ngFor="let error of passwordConfirmationErrors">
+                                        {{ error }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group has-success">
+                                <h4 class="entity-info"><label for="email" class="label-has-danger"> Email </label></h4>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                    <input id="email" type="text" class="form-control" [(ngModel)]="user.email" name="email" required #email="ngModel">
+                                </div>
+                            </div>
+                            <div class="alert alert-danger" role="alert" *ngIf="emailErrors.length > 0">
+                                <ul>
+                                    <li *ngFor="let error of emailErrors">
+                                        {{ error }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group has-success">
+                                <h4 class="entity-info"><label for="firstName" class="label-has-success"> Prenume </label></h4>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-address-book"></i></div>
+                                    <input id="firstName" type="text" class="form-control" [(ngModel)]="user.firstName" name="firstName" required #firstName="ngModel">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group has-success">
+                                <h4 class="entity-info"><label for="lastName" class="label-has-success"> Nume </label></h4>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-address-book"></i></div>
+                                    <input id="lastName" type="text" class="form-control" [(ngModel)]="user.lastName" name="lastName" required #lastName="ngModel">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+
+
+                    <button type="button" class="btn btn-md btn-add animated flipInX flipInY lightSpeedIn slideInUp" (click)="submit()">
+                        <i class="fa fa-floppy-o"></i> Save
+                    </button>
+                </form>
+
+                <br />
+                <br />
+
+            </div>
+        </div>
+    </div>
+</div>

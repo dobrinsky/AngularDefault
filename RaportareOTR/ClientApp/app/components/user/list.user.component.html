@@ -1,0 +1,54 @@
+
+<div class="panel panel-bd lobidisable">
+    <div class="card">
+        <div class="card-body">
+            <div class="panel-body">
+
+                <h1>Users</h1>
+
+                <br />
+                <br />
+
+                <button type="button" [routerLink]="['/add-user']" class="btn btn-md btn-add animated flipInX flipInY lightSpeedIn slideInUp">
+                    <i class="fa fa-plus"></i> Adauga
+                </button>
+
+                <br />
+                <br />
+
+                <div class="table-responsive">
+                    <table id="dataTableExample1" class="table full-color-table full-success-table m-t-30 table-hover contact-list footable-loaded footable">
+                        <thead>
+                            <tr class="info">
+                                <th>Username</th>
+                                <th>E-mail</th>
+                                <th>Type</th>
+                                <th>Last active date</th>
+                                <th>Click count</th>
+                                <th>Action </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let x of users">
+                                <td class="borded-td">
+                                    <a [routerLink]="['/view-user/' + x.user.userName ]">
+                                        <div style="height:100%;width:100%">
+                                           {{x.user.userName}}
+                                        </div>
+                                    </a>
+                                </td>
+                                <td class="borded-td">{{x.user.email}}</td>
+                                <td class="borded-td">{{x.role}}</td>
+                                <td class="borded-td">{{x.user.lastActiveDate | date:'medium' }}</td>
+                                <td class="borded-td">{{x.user.clickCount}}</td>
+                                <td style="text-align:center">
+                                    <button type="button" class="btn btn-red" (click)="delete(x.user.id)"> <i class="fa fa-trash-o fa-2x"> Sterge</i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

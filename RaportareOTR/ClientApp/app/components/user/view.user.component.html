@@ -1,0 +1,88 @@
+
+<div class="panel panel-bd lobidisable">
+    <div class="card">
+        <div class="card-body">
+            <div class="jumbotron">
+                <h6 class="display-3"><img [src]="serverBusyService.appName + '/images/users/username.svg'" alt="username" class="img-responsive-small" />{{user.user.userName}} - <img [src]="serverBusyService.appName + '/images/users/userclass.svg'" alt="userclass" class="img-responsive-small" />{{user.role}}</h6>
+                <hr class="my-4">
+                <p >User</p>
+                
+                <div class="col-12">
+                    <div class="message-box contact-box">
+                        <div class="message-widget contact-widget">
+
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-1">
+                                    <a>
+                                        <div class="user-img"> <img [src]="serverBusyService.appName + '/images/mail-icon.svg'" alt="mail" class="img-responsive" /></div>
+                                        <div class="mail-contnet">
+                                            <h4 class="entity-info">Email</h4> <span>{{user.user.email}}</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-1">
+                                    <a>
+                                        <div class="user-img"> <img [src]="serverBusyService.appName + '/images/users/firstName.svg'" alt="first name" class="img-responsive" /></div>
+                                        <div class="mail-contnet">
+                                            <h4 class="entity-info">Prenume</h4> <span>{{user.user.firstName}}</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-1">
+                                    <a>
+                                        <div class="user-img"> <img [src]="serverBusyService.appName + '/images/users/lastName.svg'" alt="last name" class="img-responsive" /></div>
+                                        <div class="mail-contnet">
+                                            <h4 class="entity-info">Nume</h4> <span>{{user.user.lastName}}</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="panel panel-bd lobidisable" *ngIf="userService.role === 'Admin'">
+
+    <div class="card">
+        <div class="card-body">
+
+            <h1>Puncte de lucru</h1>
+
+            <br />
+            <br />
+
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table id="dataTableExample1" class="table full-color-table full-success-table m-t-30 table-hover contact-list footable-loaded footable">
+                        <thead>
+                            <tr class="info">
+                                <th>Denumire punct de lucru</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let x of puncteDeLucru">
+                                <td class="borded-td">{{x.denumirePunctDeLucru}}</td>
+                                <td style="text-align:center">
+                                    <button type="button" class="btn btn-select btn-xs" (click)="alege(x.id)"><i class="fa fa-hand-pointer-o fa-2x"> Alege</i></button>
+                                    <br />
+                                    <br />
+                                    <button type="button" class="btn btn-red btn-xs" (click)="delete(x.id)"><i class="fa fa-trash-o fa-2x"> Sterge</i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

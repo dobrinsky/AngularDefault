@@ -1,0 +1,50 @@
+
+<br />
+<br />
+
+<div class="panel panel-bd lobidisable">
+
+    <div class="card">
+        <div class="card-body">
+
+            <button type="button" class="btn btn-md btn-red animated flipInX flipInY lightSpeedIn slideInUp" (click)="deleteAll()">
+                <i class="fa fa-trash"></i> Sterge tot
+            </button>
+
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <!--<table id="dataTableExample1" class="table full-color-table full-success-table hover-table">-->
+                    <table id="dataTableExample1" class="table full-color-table full-success-table m-t-30 table-hover contact-list footable-loaded footable">
+                        <thead>
+                            <tr class="info">
+                                <th>Description</th>
+                                <th>Moment</th>
+                                <th>File</th>
+                                <th>Method</th>
+                                <th>Line</th>
+                                <th>Delete </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let x of errors">
+                                <td class="borded-td">
+                                    {{x.description}}
+                                </td>
+                                <td class="borded-td">{{ x.moment | date:'medium' }}</td>
+                                <td class="borded-td">{{x.file}}</td>
+                                <td class="borded-td">{{x.method}}</td>
+                                <td class="borded-td">{{x.line}}</td>
+                                <td style="text-align:center">
+                                    <button type="button" class="btn btn-red btn-xs" (click)="delete(x.id)"><i class="fa fa-trash-o fa-2x"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
